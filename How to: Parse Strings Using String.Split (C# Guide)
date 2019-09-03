@@ -1,0 +1,65 @@
+//1
+
+string phrase = "The quick brown fox jumps over the lazy dog.";
+string[] words = phrase.Split(' ');
+
+foreach (var word in words)
+{
+    System.Console.WriteLine($"<{word}>");
+}
+
+//2
+
+string phrase = "The quick brown    fox     jumps over the lazy dog.";
+string[] words = phrase.Split(' ');
+
+foreach (var word in words)
+{
+    System.Console.WriteLine($"<{word}>");
+}
+
+//3
+
+char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+
+string text = "one\ttwo three:four,five six seven";
+System.Console.WriteLine($"Original text: '{text}'");
+
+string[] words = text.Split(delimiterChars);
+System.Console.WriteLine($"{words.Length} words in text:");
+
+foreach (var word in words)
+{
+    System.Console.WriteLine($"<{word}>");
+}
+
+//4
+
+char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+
+string text = "one\ttwo :,five six seven";
+System.Console.WriteLine($"Original text: '{text}'");
+
+string[] words = text.Split(delimiterChars);
+System.Console.WriteLine($"{words.Length} words in text:");
+
+foreach (var word in words)
+{
+    System.Console.WriteLine($"<{word}>");
+}
+
+
+//5
+
+string[] separatingStrings = { "<<", "..." };
+
+string text = "one<<two......three<four";
+System.Console.WriteLine($"Original text: '{text}'");
+
+string[] words = text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+System.Console.WriteLine($"{words.Length} substrings in text:");
+
+foreach (var word in words)
+{
+    System.Console.WriteLine(word);
+}
